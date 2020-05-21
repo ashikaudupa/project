@@ -1,0 +1,67 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	do {
+		int choice;
+		int items[20][2], cart[20];
+		int num;
+		FILE* fptr;
+		int i = 0,j = 0,k = 0;
+		int id;
+		printf("1. Display list\n2. Select item\n3. Bill\n4.History of billed items\n");
+		printf("Enter your choice\n");
+		scanf("%d", choice);
+		switch (choice)
+		{
+		case 1:
+			printf("List of items available\n");
+			fptr = fopen("itemList.txt", "r");
+			if (fptr == NULL)
+			{
+				printf("File does not exist\n");
+				exit(1);
+			}
+			else
+			{
+				char data[100];
+				while (fgets(data, 100, fptr) != NULL)
+				{
+					printf("%s", data);
+				}
+			}
+			break;
+		case 2:
+			printf("Enter ids and number of items selected\n");
+			while (1)
+			{
+				scanf("%d%d", &items[i][j]);
+				if (items[i][j] == 0)
+					break;
+				i++;
+				j++;
+            }
+			fptr = fopen("itemList.txt", "r");
+			if (fptr == NULL)
+			{
+				printf("File does not exist\n");
+				exit(1);
+			}
+			else
+			{
+				char data[100];
+				while (fgets(data, 100, fptr) != NULL)
+				{
+					while (data[i] != " ")
+					{
+						if (items[i][0] == data[i])
+						{
+							while(data[i] != "\n")
+							cart[k] = data[]
+						}
+					}
+				}
+			}
+		}
+	} while (1);
+}
